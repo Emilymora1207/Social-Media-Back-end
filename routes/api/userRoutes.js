@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { updateUser } = require('../../controller/userController');
+// const { updateUser } = require('../../controller/userController');
 const {
   getUsers,
   getSingleUser,
