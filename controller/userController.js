@@ -1,3 +1,4 @@
+const { error } = require('console');
 const { User, Thought } = require('../models');
 
 module.exports = {
@@ -5,8 +6,11 @@ module.exports = {
     try {
       const Users = await User.find();
       res.json(Users);
+      console.log(req);
+
     } catch (err) {
       res.status(500).json(err);
+      console.log(err);
     }
   },
   // Get a single user

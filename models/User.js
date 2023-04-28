@@ -18,32 +18,32 @@ const User = mongoose.model('User', userSchema);
 
 const handleError = (err) => console.error(err);
 
-
+module.exports = User;
 
 
 
 
 // Will add data only if collection is empty to prevent duplicates
 // Note that two documents can have the same name value
-User.find({})
-    .exec()
-    .then(async collection => {
-        if (collection.length === 0) {
-            const results = await Department.insertMany(
-                [
-                    { name: 'Produce' },
-                    { name: 'Dairy' },
-                    { name: 'Meat' },
-                    { name: 'Wine' },
-                    { name: 'Wine' },
-                    { name: 'Wine' },
-                    { name: 'Flowers' },
-                ]
-            );
-            return console.log('Departments inserted', results);
-        }
-        return console.log('Already populated');
-    })
-    .catch(err => handleError(err));
+// User.find({})
+//     .exec()
+//     .then(async collection => {
+//         if (collection.length === 0) {
+//             const results = await Department.insertMany(
+//                 [
+//                     { name: 'Produce' },
+//                     { name: 'Dairy' },
+//                     { name: 'Meat' },
+//                     { name: 'Wine' },
+//                     { name: 'Wine' },
+//                     { name: 'Wine' },
+//                     { name: 'Flowers' },
+//                 ]
+//             );
+//             return console.log('Departments inserted', results);
+//         }
+//         return console.log('Already populated');
+//     })
+//     .catch(err => handleError(err));
 
-module.exports = User;
+
