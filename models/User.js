@@ -6,7 +6,6 @@ const userSchema = new mongoose.Schema({
     //******************add email validator */
     email: { type: String, unique: true, required: true, match: ['\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b', 'Please enter a valid email'] },
     thoughts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Thought'}],
-    //i dont think this is right*************
     friends: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
 });
 

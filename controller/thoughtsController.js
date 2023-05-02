@@ -1,11 +1,14 @@
 const { User, Thought } = require('../models');
 
+
+// .sort({createdAt: -1})
 module.exports = {
   async getThoughts(req, res) {
     try {
-      const thoughts = await Thought.find().sort({createdAt: -1});
+      const thoughts = await Thought.find();
       res.json(thoughts);
     } catch (err) {
+      console.log(err);
       res.status(500).json(err);
     }
   },
