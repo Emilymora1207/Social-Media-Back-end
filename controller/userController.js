@@ -79,7 +79,7 @@ module.exports = {
     //       .json({ message: 'Video created but no user with this id!' });
     //   }
 
-      res.json({ message: 'Video User deleted!' });
+      res.json({ message: 'User deleted!' });
     } catch (err) {
       res.status(500).json(err);
     }

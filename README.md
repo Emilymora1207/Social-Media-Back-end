@@ -15,7 +15,11 @@ To install this project
 
 Once you are in insomnia you can create, read, update and delete your users and user's thoughts as necessary. 
 
+![routescreenshot](./assets/getThoughtsRoutes.png)
+
 There are also routes that can be used to add and delete another user's id to the user's friend's list, and to add or delete a reaction to a thought. 
+
+![routescreenshot](./assets/addReactionRoutes.png)
 
 ## Credits
 
