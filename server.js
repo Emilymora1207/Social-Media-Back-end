@@ -8,6 +8,9 @@ const db = require('./config/connection');
 const app = express();
 const port = 3001;
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 app.use(routes);
 // Connection string to local instance of MongoDB
 const connectionStringURI = `mongodb://127.0.0.1:27017`;
@@ -58,8 +61,7 @@ db.once('open', () => {
 
 // const app = express();
 
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
+
 
 // // Finds all departments
 // app.get('/all-departments', async (req, res) => {

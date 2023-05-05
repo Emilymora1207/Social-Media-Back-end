@@ -4,9 +4,9 @@ const mongoose= require('mongoose');
 const userSchema = new mongoose.Schema({
     username: { type: String, unique: true, required: true, trim: true },
     //******************add email validator */
-    email: { type: String, unique: true, required: true, match: ['\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b', 'Please enter a valid email'] },
+    email: { type: String, unique: true, required: true, match: [/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,3}$/i, 'Please enter a valid email'] },
     thoughts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Thought'}],
-    friends: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User'}]
+    friends: [{ type: String}]
 });
 
 userSchema.virtual('friendCount').get(function () {

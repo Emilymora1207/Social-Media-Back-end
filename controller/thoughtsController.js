@@ -95,7 +95,7 @@ module.exports = {
     try {
       const reaction = await Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
-        {$pull: {reactions: req.params.reactionId}});
+        {$pull: {reactions: {_id: req.params.reactionId}}});
 
       if (!reaction) {
         return res.status(404).json({ message: 'No reaction with this id!' });
